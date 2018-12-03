@@ -1,0 +1,70 @@
+.nav {
+  height: 60rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 60rpx;
+  background: white;
+  font-size: 28rpx;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  color: #ccc
+}
+
+.nav-item.active {
+  color: black;
+}
+
+.container {
+  margin-top: 60rpx;
+}
+
+.item-container {
+  padding: 20rpx;
+  height: 140rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.article {
+  width: 460rpx;
+}
+
+.img {
+  display: inline-flex;
+  width: 200rpx;
+  height: 140rpx;
+}
+
+image {
+  height: 100%;
+}
+
+.item-title {
+  font-size: 26rpx;
+  height: 100rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-source, .item-replyCount {
+  font-size: 20rpx;
+  color: #888;
+  display: inline-flex;
+  justify-content: flex-start;
+}
+
+.item-replyCount {
+  margin-left: 20rpx;
+}

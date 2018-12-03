@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="hongquan" unicode="&#59032;" d="M512 128a256 256 0 1 1 0 512 256 256 0 0 1 0-512z m0-170.666667A426.666667 426.666667 0 1 0 512 810.666667a426.666667 426.666667 0 0 0 0-853.333334z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

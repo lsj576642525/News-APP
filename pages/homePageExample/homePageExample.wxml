@@ -1,0 +1,14 @@
+<view>
+  <block wx:for="{{list.tid}}" wx:key="item">
+    <view class='item-container'>
+      <view class='article'>
+        <text class='item-title'>{{item.title}}</text>
+        <text class='item-source'>{{item.source}}</text>
+        <text class='item-upTimes'>{{item.upTimes}}跟帖</text>
+      </view>
+      <view class='img'>
+        <image src='{{item.imgsrc}}'></image>
+      </view>
+    </view>
+  </block>
+</view>
