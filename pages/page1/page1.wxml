@@ -13,19 +13,21 @@
   </view>
 </view>
 <!-- 页面内容 -->
-<view class="switchTab">
-  <view class="container">
-    <block wx:for="{{pageCurrentState=='recommend'?list.tid:list.T1348649580692}}" wx:key="item">
-      <view class='item-container'>
-        <view class='article'>
-          <text class='item-title'>{{item.title}}</text>
-          <text class='item-source'>{{item.source}}</text>
-          <text class='item-replyCount'>{{item.replyCount}}跟帖</text>
+<my-component id="banner">
+  <view class="switchTab">
+    <view class="container">
+      <block wx:for="{{pageCurrentState=='recommend'?list.tid:list.T1348649580692}}" wx:key="item">
+        <view class='item-container'>
+          <view class='article'>
+            <text class='item-title'>{{item.title}}</text>
+            <text class='item-source'>{{item.source}}</text>
+            <text class='item-replyCount'>{{item.replyCount}}跟帖</text>
+          </view>
+          <view class='img'>
+            <image src='{{item.imgsrc}}'></image>
+          </view>
         </view>
-        <view class='img'>
-          <image src='{{item.imgsrc}}'></image>
-        </view>
-      </view>
-    </block>
+      </block>
+    </view>
   </view>
-</view>
+</my-component>

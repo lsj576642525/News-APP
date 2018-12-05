@@ -10,6 +10,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999
 }
 
 .nav-item {
@@ -24,7 +25,7 @@
 }
 
 .container {
-  margin-top: 60rpx;
+  margin-top: 30rpx;
 }
 
 .item-container {

@@ -1,0 +1,12 @@
+<view class="page-section page-section-spacing swiper">
+  <swiper autoplay="true" circular="true"  interval="5000" indicator-dots='true'>
+    <block wx:for="{{pageCurrentState=='recommend'?list.T1348649580692:list.tid}}" wx:key="item">
+      <swiper-item>
+        <view class="swiper-item">
+        <image class="" src='{{item.imgsrc}}' mode="aspectFit"/>        
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<slot></slot>
