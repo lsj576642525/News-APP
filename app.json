@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/page1/page1"
+    "pages/homePage/homePage",
+    "pages/detailPage/detailPage"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -8,7 +9,6 @@
     "navigationBarTitleText": "网易新闻",
     "navigationBarTextStyle": "black"
   },
-  
   "enablePullDownRefresh": true,
   "onReachButtomDistance": 50
 }
