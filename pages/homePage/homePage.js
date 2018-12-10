@@ -17,7 +17,6 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     self = this;
     self.loadRecommendPageData();
-    self.loadFocusNewsPageData();
   },
   onReady: function () {
     // 页面渲染完成
@@ -99,6 +98,11 @@ Page({
   },
   focusNewsDidTap: function (event) {
     let opts = {};
+    if (self.data.list.T1348649580692.length) {
+
+    } else {
+      self.loadFocusNewsPageData();
+    }
     self.setData({
       'pageCurrentState': 'focusNews',
     })

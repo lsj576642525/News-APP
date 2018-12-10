@@ -13,25 +13,26 @@
   </view>
 </view>
 <!-- 页面内容 -->
-
-  <view class="switchTab">
-  <tbbc-banner id="banner" wx:if="{{pageCurrentState=='recommend'}}" pageCurrentState='recommend'>
-  </tbbc-banner>
-  <tbbc-banner id="banner" wx:if="{{pageCurrentState=='focusNews'}}" pageCurrentState='focusNews'>
-  </tbbc-banner>
-    <view class="container">
-      <block wx:for="{{pageCurrentState=='recommend'?list.tid:list.T1348649580692}}" wx:key="item">
-        <view class='item-container'>
-          <view class='article'>
-            <text class='item-title'>{{item.title}}</text>
-            <text class='item-source'>{{item.source}}</text>
-            <text class='item-replyCount'>{{item.replyCount}}跟帖</text>
-          </view>
-          <view class='img'>
-            <image wx:if="{{pageCurrentState=='recommend'}}" src='{{item.imgsrc}}'></image>
-            <image wx:if="{{pageCurrentState=='focusNews'}}" src='{{item.imgsrc}}'></image>
-          </view>
-        </view>
-      </block>
+<view class="switchTab">
+  <view class="container">
+    <view hidden="{{pageCurrentState=='recommend'?false:true}}">
+      <tbbc-banner id="banner" pageCurrentState='recommend'></tbbc-banner>
     </view>
+    <view hidden="{{pageCurrentState=='focusNews'?false:true}}">
+      <tbbc-banner id="banner" pageCurrentState='focusNews'></tbbc-banner>
+    </view>
+    <block wx:for="{{pageCurrentState=='recommend'?list.tid:list.T1348649580692}}" wx:key="item">
+      <view class='item-container'>
+        <view class='article'>
+          <text class='item-title'>{{item.title}}</text>
+          <text class='item-source'>{{item.source}}</text>
+          <text class='item-replyCount'>{{item.replyCount}}跟帖</text>
+        </view>
+        <view class='img'>
+          <image wx:if="{{pageCurrentState=='recommend'}}" src='{{item.imgsrc}}'></image>
+          <image wx:if="{{pageCurrentState=='focusNews'}}" src='{{item.imgsrc}}'></image>
+        </view>
+      </view>
+    </block>
   </view>
+</view>
