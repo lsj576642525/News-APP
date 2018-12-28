@@ -26,11 +26,7 @@ Component({
   lifetimes: {
     attached: function () { // 在组件实例进入页面节点树时执行
       let self = this;
-      if (self.data.pageCurrentState == 'recommend') {
-        self.loadRecommendPageImg();
-      } else {
-        self.loadFocusNewsPageImg()
-      }
+      self.loadPageImg()
     },
 
     detached: function () { // 在组件实例被从页面节点树移除时执行
@@ -39,31 +35,31 @@ Component({
   },
 
   methods: {
-    loadRecommendPageImg: function () {
-      let opts = {};
-      let self = this;
-      opts.successBack = function (responsData) {
-        let backRecommendList = responsData.data.tid || [];
-        self.setData({
-          'list.tid': backRecommendList
-        })
+    loadPageImg: function () {
+      let opts = {}
+      let self = this
+      var pageType = self.data.pageCurrentState
+      if (pageType == 'recommend') {
+        opts.successBack = function (responsData) {
+          let backRecommendList = responsData.data.tid || [];
+          self.setData({
+            'list.tid': backRecommendList
+          })
+        }
+        opts.type = 'recommend'
+        opts.offset = '1'
+        Util.getNewsListByOpts(opts)
+      } else {
+        opts.successBack = function (responsData) {
+          let backFocusNewsList = responsData.data.T1348649580692 || [];
+          self.setData({
+            'list.T1348649580692': backFocusNewsList
+          })
+        }
+        opts.type = 'focusNews'
+        opts.offset = '1'
+        Util.getNewsListByOpts(opts)
       }
-      opts.type = 'recommend';
-      opts.offset = '1';
-      Util.getNewsListByOpts(opts);
-    },
-    loadFocusNewsPageImg: function () {
-      let opts = {};
-      let self = this;
-      opts.successBack = function (responsData) {
-        let backFocusNewsList = responsData.data.T1348649580692 || [];
-        self.setData({
-          'list.T1348649580692': backFocusNewsList
-        })
-      }
-      opts.type = 'focusNews';
-      opts.offset = '1';
-      Util.getNewsListByOpts(opts);
     },
     recommendImgDidTap: function (event) {
       let self = this;
