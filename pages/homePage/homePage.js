@@ -31,8 +31,9 @@ Page({
     // 页面关闭
   },
   // 触发了下拉刷新 
-  onPullDownRefresh: function () {
-    if (self.data.pageCurrentState == 'recommend') {
+  onPullDownRefresh: function (pageType) {
+    var pageType = self.data.pageCurrentState;
+    if (pageType == 'recommend') {
       self.data.list.tid = [];
       self.loadRecommendPageData();
     } else {
@@ -41,17 +42,38 @@ Page({
     }
   },
   // 滚动到页面底部
-  onReachBottom: function () {
-    if (self.data.pageCurrentState == 'recommend') {
+  onReachBottom: function (pageType) {
+    var pageType = self.data.pageCurrentState;
+    if (pageType == 'recommend') {
       self.loadRecommendPageData();
     } else {
       self.loadFocusNewsPageData();
     }
   },
+  loadPageData: function (pageType) {
+    let opts = {};
+    opts.successBack = function (responsData) {
+      let backNewsList = responsData.data.T1348649580692 || [];
+      if (self.data.list.T1348649580692.length) {
+        self.setData({
+          'list.T1348649580692': self.data.list.T1348649580692.concat(backNewsList)
+        })
+      } else {
+        self.setData({
+          'list.T1348649580692': backNewsList
+        })
+      }
+      wx.stopPullDownRefresh();
+    }
+    opts.type = pageType
+    opts.offset = self.data.list.T1348649580692.length
+    Util.getNewsListByOpts(opts)
+  },
   // 请求/更新页面数据
   loadRecommendPageData: function () {
     let opts = {};
     opts.successBack = function (responsData) {
+      console.log(responsData)
       let backTidList = responsData.data.tid || [];
       if (self.data.list.tid.length) {
         self.setData({
