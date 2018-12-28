@@ -1,7 +1,0 @@
-{
-  "enablePullDownRefresh": true,
-  "onReachButtomDistance": 50,
-  "usingComponents": {
-    "my-component": "/components/tbbc-banner/tbbc-banner"
-  }
-}
